@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bình luận</title>
+    <style>
+        body { margin: 0; padding: 10px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        #disqus_thread { min-height: 300px; }
+    </style>
+</head>
+<body>
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        
+        var disqus_config = function ( ) {
+            var gitbookPageUrl = document.referrer;
+            if (gitbookPageUrl) {
+                this.page.url = gitbookPageUrl;
+                // Sử dụng pathname làm identifier để đảm bảo mỗi bài viết có một bộ bình luận riêng
+                // Ví dụ: https://your-gitbook.gitbook.io/your-space/chapter-1/page-title -> /your-space/chapter-1/page-title
+                var url = new URL(gitbookPageUrl );
+                this.page.identifier = url.pathname;
+            } else {
+                // Fallback nếu document.referrer không có (ví dụ: truy cập trực tiếp proxy page)
+                this.page.url = window.location.href;
+                this.page.identifier = 'default-id';
+            }
+            this.language = 'vi'; // Thiết lập tiếng Việt
+        };
+        
+        (function() { // DON\'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            // THAY THẾ 'your-disqus-shortname' bằng shortname của bạn
+            s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date( ));
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Vui lòng bật JavaScript để xem <a href="https://disqus.com/?ref_noscript">bình luận được cung cấp bởi Disqus.</a></noscript>
+</body>
+</html>
